@@ -27,7 +27,7 @@ class SQLRunner:
     def execute_insert_file(self):
         file = open("./insert.sql", 'r')
         sql = file.read()
-        table_values = self.cursor.execute(sql)
+        table_values = self.cursor.executescript(sql)
         file.close()
         return table_values
 
